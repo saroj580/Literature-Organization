@@ -65,7 +65,10 @@ function createWindow() {
   });
 
   if (isDev) {
-    mainWindow.loadURL('http://localhost:5173');
+    // Small delay to let Vite finish starting up before Electron connects
+    setTimeout(() => {
+      mainWindow.loadURL('http://localhost:5173');
+    }, 1500);
   } else {
     mainWindow.loadFile(path.join(__dirname, 'dist', 'index.html'));
   }
