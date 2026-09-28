@@ -1,0 +1,10 @@
+# Installer and Packaging Artifacts
+dist-installer/
+frontend/dist-electron/
+backend/dist/
+backend/build/
+
+# Node & Python caches
+node_modules/
+__pycache__/
+*.log
