@@ -1,6 +1,4 @@
-// ─────────────────────────────────────────────────────────────
 // main.cjs — Electron Main Process & Python Lifecycle Manager
-// ─────────────────────────────────────────────────────────────
 
 const { app, BrowserWindow } = require('electron');
 const path = require('path');

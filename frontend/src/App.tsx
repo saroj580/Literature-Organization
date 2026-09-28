@@ -320,6 +320,37 @@ export default function App() {
             </div>
           )}
         </div>
+
+        {/* ── Footer credit ─────────────────────────────────────── */}
+        <footer
+          className="shrink-0 flex items-center justify-between px-8 py-3 text-xs"
+          style={{ borderTop: '1px solid var(--border)', color: 'var(--text-muted)' }}
+        >
+          <span>
+            Developed with{' '}
+            <span
+              className="animate-pulse"
+              style={{ color: '#f87171', fontSize: '13px' }}
+            >
+              ❤️
+            </span>
+            {' '}by{' '}
+            <span className="font-semibold" style={{ color: 'var(--accent-2)' }}>
+              Saroj
+            </span>
+          </span>
+
+          <span style={{ color: 'var(--border)' }}>·</span>
+
+          <span>
+            © {new Date().getFullYear()}{' '}
+            <span className="font-medium" style={{ color: 'var(--text-muted)' }}>
+              Literature Organizer
+            </span>
+            {' '}· All rights reserved
+          </span>
+        </footer>
+
       </main>
 
       {/* ── Add / Edit modal ─────────────────────────────────── */}
