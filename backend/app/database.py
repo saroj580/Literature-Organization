@@ -3,8 +3,20 @@ import json
 import sqlite3
 import secrets
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB_PATH = os.path.join(BASE_DIR, "organizer.db")
+import sys
+
+def get_data_dir() -> str:
+    # If running inside PyInstaller bundle
+    if getattr(sys, 'frozen', False):
+        base = os.environ.get('APPDATA', os.path.expanduser('~'))
+        data_dir = os.path.join(base, 'LiteratureOrganizer')
+    else:
+        # Development mode
+        data_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    os.makedirs(data_dir, exist_ok=True)
+    return data_dir
+
+DB_PATH = os.path.join(get_data_dir(), "organizer.db")
 
 def get_conn() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
